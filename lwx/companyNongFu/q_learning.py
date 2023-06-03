@@ -55,7 +55,7 @@ def get_env_feedback(S, A, dataset):
     #居民用电成本
     CUS = A*powerNum
     #售电公司的销售额
-
+    #test
     R = CUS
     return S_, R
 
