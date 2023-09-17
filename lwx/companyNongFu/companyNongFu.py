@@ -200,15 +200,17 @@ def showData():
     dataset = data_csv.values
     #对数据类型进行转换
     dataset = dataset.astype('float32')
-
-    plt.plot(dataset)
-    plt.show()
+    date_num = int(len(dataset) / 24)
+    for e in range(date_num):
+        dataset1 = dataset[e * 24:(e + 1) * 24]
+        plt.plot(dataset1)
+        plt.show()
 
 
 if __name__ == '__main__':
     #训练并保存模型
-    run()
+    # run()
     #加载模型
     # load()
     #显示数据
-    # showData()
+    showData()
