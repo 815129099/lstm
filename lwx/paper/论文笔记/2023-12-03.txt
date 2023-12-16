@@ -1,0 +1,31 @@
+1、不可削减负荷实际负荷 = （1-K）*负荷需求量    ,k 需求系数
+
+2、可削减负荷 = k*负荷需求量 *(1+x（零售电价-批发价）/批发价)   x表示 t 时刻需求响应的弹性系数   [−0.8, −0.2]
+
+3、舒适成本  
+
+
+总负荷不变
+可调节负荷 = 总负荷*系数
+
+用户收益：
+
+
+售电商收益= （零售电价-批发价）*用户消耗负荷
+每个小时最大可消耗负荷
+
+目的：用户成本最低+售电商收益高+规划用户用电行为
+
+	
+	[72] Miller  M,  Alberini  A.  Sensitivity  of  price  elasticity  of  demand  to  aggregation,  unobserved 
+heterogeneity,  price  trends,  and  price  endogeneity:  evidence  from  US  data[J].  Energy  Policy, 
+2016, 235(97): 49. 
+
+[71] 冯小峰,  谢添阔,  高赐威,  等.  电力现货市场下计及售电商长期收益的需求侧响应[J].  电
+网技术, 2019, 43(8). 
+
+[70] Fahrioglu  M,  Alvarado  F  L.  Using  utility  information  to  calibrate  customer  demand 
+management behavior models[J]. IEEE Power Engineering Review, 2007, 21(4): 71. 
+
+[69] Chai B, Chen J, Yang Z, et al. Demand response management with multiple utility companies: a 
+two-level game approach[J]. IEEE Transactions on Smart Grid, 2014, 5(2): 722-731. 

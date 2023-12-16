@@ -13,7 +13,7 @@ import time
 np.random.seed(2)  # reproducible
 
 
-N_STATES = 48   # 状态
+N_STATES = 48   # 状态 t时刻
 ACTIONS = np.linspace(10.0, 100.0, num=5)     # 动作，离散化
 EPSILON = 0.9   # 90%取奖励最大的动作
 ALPHA = 0.1     # 10%取随机动作 学习率
@@ -22,6 +22,7 @@ MAX_EPISODES = 100  # maximum episodes
 FRESH_TIME = 0.3    # fresh time for one move
 
 #初始化q表
+#t时刻，零售电价
 def build_q_table(n_states, actions):
     table = pd.DataFrame(
         np.zeros((n_states, len(actions))),     # q_table initial values
@@ -42,7 +43,7 @@ def choose_action(state, q_table):
     return action_name
 
 #获取当前status的奖励和下一个state
-def get_env_feedback(S, A, dataset):
+def get_env_feedback(S, PRICE, dataset):
     # This is how agent will interact with the environment
     if S == N_STATES - 1:  # terminate
         S_ = 'terminal'
@@ -51,15 +52,15 @@ def get_env_feedback(S, A, dataset):
 
     #预测的用电量
     powerNum = dataset[S]
-    #计算奖励
+    #计算
     #居民用电成本
-    CUS = A*powerNum
+    CUS = PRICE*powerNum
     #售电公司的销售额
-    #test
+    # 当前状态的奖励，输出最大收益
     R = CUS
     return S_, R
 
-
+#更新环境
 def update_env(S, episode, step_counter):
     # This is how environment be updated
     env_list = ['-']*(N_STATES-1) + ['T']   # '---------T' our environment
@@ -86,7 +87,7 @@ def rl():
         is_terminated = False
         # update_env(S, episode, step_counter)
         while not is_terminated:
-
+            #确认t时刻的零售电价
             A = choose_action(S, q_table)
             #获取下一个状态，计算奖励
             S_, R = get_env_feedback(S, A, dataset)  # take action & get next state and reward
@@ -102,7 +103,7 @@ def rl():
             q_table.loc[S, A] += ALPHA * (q_target - q_predict)  # update
             S = S_  # move to next state
 
-            # update_env(S, episode, step_counter+1)
+            #update_env(S, episode, step_counter+1)
             # step_counter += 1
     return q_table
 
