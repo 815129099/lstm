@@ -13,13 +13,13 @@ import time
 np.random.seed(2)  # reproducible
 
 
-N_STATES = 48   # 状态 t时刻
+N_STATES = 24   # 状态 t时刻
 ACTIONS = np.linspace(10.0, 100.0, num=5)     # 动作，离散化
 EPSILON = 0.9   # 90%取奖励最大的动作
 ALPHA = 0.1     # 10%取随机动作 学习率
 GAMMA = 0.9    # 奖励折扣
-MAX_EPISODES = 100  # maximum episodes
-FRESH_TIME = 0.3    # fresh time for one move
+MAX_EPISODES = 100  # maximum episodes  最大回合
+FRESH_TIME = 0.3    # fresh time for one move  移动间隔
 
 #初始化q表
 #t时刻，零售电价
@@ -31,7 +31,7 @@ def build_q_table(n_states, actions):
     print(table)    # show table
     return table
 
-
+# 选择回报最大的action
 def choose_action(state, q_table):
     # This is how to choose an action
     #获取该state那一行
@@ -122,6 +122,7 @@ def test():
     q_table = build_q_table(N_STATES, ACTIONS)
     #预测的用电量
     dataset = load();
+    #开始循环
     for episode in range(MAX_EPISODES):
         # step_counter = 0
         S = 0
