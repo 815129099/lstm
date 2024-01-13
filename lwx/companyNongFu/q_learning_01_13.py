@@ -18,19 +18,19 @@ np.random.seed(2)  # reproducible
 TIME_DICT = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:1,9:1,10:1,11:1,12:1,13:1,14:2,15:2,16:2,17:1,18:1,19:2,20:2,21:2,22:1,23:1}  #峰平谷
 N_STATES = 24   # 状态 t时刻
 PREDICT_ACTIONS = np.array([0.22, 0.53, 0.89]) #批发电价
-ACTIONS = np.round(np.linspace(0.3, 1.1, num=12), decimals=3)     # 动作，离散化   零售价
+BEFORE_ACTIONS = np.array([0.2465, 0.5417, 0.8623]) #原来电价
+ACTIONS = np.round(np.linspace(0.3, 1.1, num=18), decimals=3)     # 动作，离散化   零售价
 EPSILON = 0.9   # 90%取奖励最大的动作
 LEARNING_RATE = 0.1     # 10%取随机动作 学习率
 GAMMA = 0.9    # 奖励折扣
-MAX_EPISODES = 100  # maximum episodes  最大回合
-FRESH_TIME = 0.3    # fresh time for one move  移动间隔
-WEIGHT_FACTOR = 0.95  #权值因子
+MAX_EPISODES = 500000  # maximum episodes  最大回合
+WEIGHT_FACTOR = 0.85  #权值因子
 ALPHA = 0.01 #  用户不满意成本偏好参数
 BETA = 0.01 #   用户不满意成本预设参数
 D_MIN = 0.1 #  可需求响应负荷最小占比
 D_MAX = 0.5 #  可需求响应负荷最大占比
 K = 0.3  # 不可参与需求响应负荷占总负荷的占比
-ELASTIC_COEFFICIENT = np.array([-0.25, -0.53, -0.82])  #谷、平、峰需求响应的弹性系数
+ELASTIC_COEFFICIENT = np.array([-0.25, -0.53, -0.7])  #谷、平、峰需求响应的弹性系数
 ACTIONS_LIST = []  #回报最高的零售价
 PARTICIPATE_POWER_LIST = [0 for _ in range(N_STATES)]  #回报最高的可参与需求响应的负荷
 NO_PARTICIPATE_POWER_LIST = [0 for _ in range(N_STATES)]  #回报最高的不参与需求响应的负荷
@@ -48,28 +48,41 @@ def build_q_table(n_states, actions):
         np.zeros((n_states, len(actions))),     # q_table initial values
         columns=actions,    # actions's name
     )
-    print(table)    # show table
-    print("---------------------------------table  end---------------------------------------------")
     return table
 
 # 选择回报最大的action
-def choose_action(S, q_table,dataset):
-    # This is how to choose an action
-    #获取该state那一行
+# 选择回报最大的action
+def choose_action(S, q_table, dataset,epsilon):
+    # 获取该状态对应的行
     state_actions = q_table.iloc[S, :]
-    if (np.random.uniform() > EPSILON):  # act non-greedy or state-action have no value
-        #随机选择
+    if np.random.uniform() < epsilon or state_actions.max() == 0:
+        # 随机选择
         action_name = np.random.choice(ACTIONS)
-    else:   # act greedy
-        #取最大的
-        mix_r = -sys.maxsize-1
-        action_name = state_actions.idxmax()    # replace argmax to idxmax as argmax means a different function in newer version of pandas
+    else:   # 贪心选择
+        # 取最大的
+        max_reward = -sys.maxsize - 1
+        valid_actions = []
+
         for i in range(len(ACTIONS)):
-            S_, R = get_env_feedback(S, ACTIONS[i], dataset, 0)
-            if (mix_r < R):
-                mix_r = R
-                action_name = ACTIONS[i]
+            # 检查零售价是否满足条件
+            if ACTIONS[i] >= PREDICT_ACTIONS[TIME_DICT[S]] * 1.1:
+                valid_actions.append(ACTIONS[i])
+
+        if len(valid_actions) > 0:
+            for j in range(len(valid_actions)):
+                S_, R = get_env_feedback(S, valid_actions[j], dataset, 0)
+                # 更新最大奖励和对应的动作
+                if max_reward < R:
+                    max_reward = R
+                    action_name = valid_actions[j]
+        else:
+            # 如果没有满足条件的零售价，随机选择一个
+            action_name = np.random.choice(ACTIONS)
+
     return action_name
+
+
+
 
 # S指时刻，A->S时刻时电价，dataset->负荷集合
 #获取当前status的奖励和下一个state
@@ -85,8 +98,8 @@ def get_env_feedback(S, A, dataset, type):
     # 获取批发电价
     wholesale_price = PREDICT_ACTIONS[flag]
 
-    if wholesale_price > A :
-        return S_, -sys.maxsize-1
+    # if wholesale_price > A :
+    #     return S_, -sys.maxsize-1
 
     #预测的用电量
     predict_power = dataset[S]
@@ -118,20 +131,6 @@ def get_env_feedback(S, A, dataset, type):
         TOTAL_POWER_LIST[S] = actual_no_participate_power+actual_participate_power
     return S_, R
 
-#更新环境
-def update_env(S, episode, step_counter):
-    # This is how environment be updated
-    env_list = ['-']*(N_STATES-1) + ['T']   # '---------T' our environment
-    if S == 'terminal':
-        interaction = 'Episode %s: total_steps = %s' % (episode+1, step_counter)
-        print('\r{}'.format(interaction), end='')
-        time.sleep(2)
-        print('\r                                ', end='')
-    else:
-        env_list[S] = 'o'
-        interaction = ''.join(env_list)
-        print('\r{}'.format(interaction), end='')
-        time.sleep(FRESH_TIME)
 
 def load():
     # 读取数据
@@ -154,17 +153,23 @@ def test():
         # step_counter = 0
         S = 0
         is_terminated = False
-        # update_env(S, episode, step_counter)
+
+        # 使用epsilon贪心策略，epsilon逐渐衰减
+        epsilon = max(0.1, EPSILON - episode / 500000)
+
+        if (episode%1000 == 0):
+            print("第"+str(episode)+"次：")
+            print(q_table)
+
         while not is_terminated:
             #获取动作
-            A = choose_action(S, q_table,dataset)
+            A = choose_action(S, q_table,dataset,epsilon)
             #获取下一个状态，计算奖励
             S_, R = get_env_feedback(S, A, dataset, 1)  # take action & get next state and reward
             #估计值
             q_predict = q_table.loc[S, A]
             if S_ != 'terminal':
-                #未结束
-                #真实值
+
                 q_target = R + GAMMA * q_table.iloc[S_, :].max()   # next state is not terminal
             else:
                 q_target = R     # next state is terminal
@@ -172,23 +177,16 @@ def test():
 
             q_table.loc[S, A] += LEARNING_RATE * (q_target - q_predict)  # update
             S = S_  # move to next state
-            #更新环境
-            # update_env(S, episode, step_counter+1)
-            # step_counter += 1
 
-        # 判断是否收敛
-        # 在Q值更新后，检查是否收敛
-        if np.max(np.abs(q_table - prev_q_table).values) < CONVERGENCE_THRESHOLD:
+        # 收敛检查
+        if check_convergence(q_table, prev_q_table):
             print(f"Q-values have converged. Stopping training at episode {episode + 1}.")
             break
 
-        prev_q_table = q_table.copy()  # 更新前的Q值表
+        prev_q_table = q_table.copy()
 
     #打印回报最大的价格
     ACTIONS_LIST = q_table.idxmax(axis=1)
-    # print(ACTIONS_LIST)
-    # print(PARTICIPATE_POWER_LIST)
-    # print(NO_PARTICIPATE_POWER_LIST)
     print("-------------------最合适零售价--------------------------")
     #用户总成本-优化前
     customer_total_cost = 0
@@ -207,9 +205,16 @@ def test():
     for i in range(N_STATES) :
         N_STATES_LIST[i] = i
         PREDICT_ACTIONS_LIST[i] = PREDICT_ACTIONS[TIME_DICT[i]]
+        #用户总用电量 - 优化前
         customer_total_power += dataset[i]
+        # 用户总成本-优化前
+        customer_total_cost += dataset[i]*BEFORE_ACTIONS[TIME_DICT[i]]
+        total_profit += (BEFORE_ACTIONS[TIME_DICT[i]]-PREDICT_ACTIONS[TIME_DICT[i]])*dataset[i]
+
         after_customer_total_power += TOTAL_POWER_LIST[i]
         after_customer_total_cost += TOTAL_POWER_LIST[i]*ACTIONS_LIST[i]
+        after_total_profit += (ACTIONS_LIST[i]-PREDICT_ACTIONS_LIST[i])*TOTAL_POWER_LIST[i]
+
 
         print("t:"+str(i)+
               "， 批发价"+str(PREDICT_ACTIONS_LIST[i])+
@@ -220,9 +225,16 @@ def test():
               "  不可参与负荷："+str(NO_PARTICIPATE_POWER_LIST[i]))
 
     print("优化前负荷总量："+str(customer_total_power))
-    print("优化后负荷总量："+str(after_customer_total_power))
-    print("优化后总利润："+str(after_customer_total_cost))
+    print("优化前用户总成本："+str(customer_total_cost))
+    print("优化前总利润："+str(total_profit))
 
+    print("优化后负荷总量："+str(after_customer_total_power))
+    print("优化后用户总成本："+str(after_customer_total_cost))
+    print("优化后总利润："+str(after_total_profit))
+
+    print("负荷总量变化："+str(after_customer_total_power - customer_total_power))
+    print("用户总成本变化："+str(after_customer_total_cost - customer_total_cost))
+    print("总利润变化："+str(after_total_profit - total_profit))
     # 汉字字体，优先使用楷体，找不到则使用黑体
     plt.rcParams['font.sans-serif'] = ['Kaitt', 'SimHei']
 
@@ -251,6 +263,17 @@ def test():
 
     return q_table
 
+
+def check_convergence(q_table, prev_q_table, n_episodes=10, threshold=CONVERGENCE_THRESHOLD):
+    if len(prev_q_table) >= n_episodes:
+        avg_rewards = [np.mean(prev_q_table.iloc[-episodes:], axis=1) for episodes in range(n_episodes)]
+        avg_rewards = np.mean(np.array(avg_rewards, dtype=object), axis=0)
+        if np.std(avg_rewards) < threshold:
+            return True
+    return False
+
+
+
 def show():
     dataset = load();
     # 汉字字体，优先使用楷体，找不到则使用黑体
@@ -269,6 +292,4 @@ def show():
 
 if __name__ == "__main__":
     q_table = test()
-    # print('\r\nQ-table:\n')
-    # show()
 
