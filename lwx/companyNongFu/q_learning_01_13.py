@@ -23,8 +23,8 @@ ACTIONS = np.round(np.linspace(0.3, 1.1, num=18), decimals=3)     # 动作，离
 EPSILON = 0.9   # 90%取奖励最大的动作
 LEARNING_RATE = 0.1     # 10%取随机动作 学习率
 GAMMA = 0.9    # 奖励折扣
-MAX_EPISODES = 500000  # maximum episodes  最大回合
-WEIGHT_FACTOR = 0.85  #权值因子
+MAX_EPISODES = 1000000  # maximum episodes  最大回合
+WEIGHT_FACTOR = 0.4  #权值因子
 ALPHA = 0.01 #  用户不满意成本偏好参数
 BETA = 0.01 #   用户不满意成本预设参数
 D_MIN = 0.1 #  可需求响应负荷最小占比
@@ -38,7 +38,7 @@ TOTAL_POWER_LIST = [0 for _ in range(N_STATES)]  #回报最高的不参与需求
 PREDICT_ACTIONS_LIST = [0 for _ in range(N_STATES)]
 N_STATES_LIST = [0 for _ in range(N_STATES)]
 dataset = [0 for _ in range(N_STATES)]
-CONVERGENCE_THRESHOLD = 0.001  #判断是否收敛
+CONVERGENCE_THRESHOLD = 1  #判断是否收敛
 
 
 #初始化q表
@@ -147,6 +147,11 @@ def test():
     q_table = build_q_table(N_STATES, ACTIONS)
     #预测的用电量
     dataset = load();
+
+    pd.set_option('display.max_columns', 1000)
+    pd.set_option('display.width', 1000)
+    pd.set_option('display.max_colwidth', 1000)
+
     #开始循环
     prev_q_table = q_table.copy()  # 复制初始的Q值表
     for episode in range(MAX_EPISODES):
@@ -158,7 +163,7 @@ def test():
         epsilon = max(0.1, EPSILON - episode / 500000)
 
         if (episode%1000 == 0):
-            print("第"+str(episode)+"次：")
+            print("第"+str(episode)+"次，时间戳："+str(int(time.time())))
             print(q_table)
 
         while not is_terminated:
