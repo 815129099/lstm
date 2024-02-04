@@ -70,7 +70,7 @@ def run():
     real_data_csv = pd.DataFrame(data=y_test,columns=['real'])
     pred_data_csv = pd.DataFrame(data=y_pre,columns=['pred'])
     dataframe = real_data_csv.join(pred_data_csv)
-    dataframe.to_csv('./new_data_nong_bp.csv',index=False,mode='w',sep=',')
+    dataframe.to_csv('./new_data_nong_bp_v1.csv',index=False,mode='w',sep=',')
 
 #运行
 if __name__ == '__main__':

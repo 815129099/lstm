@@ -18,19 +18,19 @@ np.random.seed(2)  # reproducible
 TIME_DICT = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:1,9:1,10:1,11:1,12:1,13:1,14:2,15:2,16:2,17:1,18:1,19:2,20:2,21:2,22:1,23:1}  #峰平谷
 N_STATES = 24   # 状态 t时刻
 PREDICT_ACTIONS = np.array([0.22, 0.53, 0.89]) #批发电价
-BEFORE_ACTIONS = np.array([0.2465, 0.5417, 0.8623]) #原来电价
+BEFORE_ACTIONS = np.array([0.2465, 0.5417, 0.9623]) #原来电价
 ACTIONS = np.round(np.linspace(0.3, 1.1, num=18), decimals=3)     # 动作，离散化   零售价
 EPSILON = 0.9   # 90%取奖励最大的动作
 LEARNING_RATE = 0.1     # 10%取随机动作 学习率
 GAMMA = 0.9    # 奖励折扣
-MAX_EPISODES = 1000000  # maximum episodes  最大回合
-WEIGHT_FACTOR = 0.4  #权值因子
+MAX_EPISODES = 10000000  # maximum episodes  最大回合
+WEIGHT_FACTOR = 0.95  #权值因子
 ALPHA = 0.01 #  用户不满意成本偏好参数
 BETA = 0.01 #   用户不满意成本预设参数
 D_MIN = 0.1 #  可需求响应负荷最小占比
 D_MAX = 0.5 #  可需求响应负荷最大占比
 K = 0.3  # 不可参与需求响应负荷占总负荷的占比
-ELASTIC_COEFFICIENT = np.array([-0.25, -0.53, -0.7])  #谷、平、峰需求响应的弹性系数
+ELASTIC_COEFFICIENT = np.array([-0.25, -0.53, -0.82])  #谷、平、峰需求响应的弹性系数
 ACTIONS_LIST = []  #回报最高的零售价
 PARTICIPATE_POWER_LIST = [0 for _ in range(N_STATES)]  #回报最高的可参与需求响应的负荷
 NO_PARTICIPATE_POWER_LIST = [0 for _ in range(N_STATES)]  #回报最高的不参与需求响应的负荷
@@ -184,10 +184,12 @@ def test():
             S = S_  # move to next state
 
         # 收敛检查
-        if check_convergence(q_table, prev_q_table):
+        if is_converged(q_table, prev_q_table):
             print(f"Q-values have converged. Stopping training at episode {episode + 1}.")
             break
-
+        # if np.max(np.abs(q_table - prev_q_table).values) < CONVERGENCE_THRESHOLD:
+        #     print(f"Q-values have converged. Stopping training at episode {episode + 1}.")
+        #     break
         prev_q_table = q_table.copy()
 
     #打印回报最大的价格
@@ -240,19 +242,14 @@ def test():
     print("负荷总量变化："+str(after_customer_total_power - customer_total_power))
     print("用户总成本变化："+str(after_customer_total_cost - customer_total_cost))
     print("总利润变化："+str(after_total_profit - total_profit))
-    #展示
-    show(PREDICT_ACTIONS_LIST, ACTIONS_LIST, dataset, TOTAL_POWER_LIST, N_STATES_LIST)
-    return q_table
-
-
-def show (PREDICT_ACTIONS_LIST, ACTIONS_LIST, dataset, TOTAL_POWER_LIST, N_STATES_LIST):
     # 汉字字体，优先使用楷体，找不到则使用黑体
     plt.rcParams['font.sans-serif'] = ['Kaitt', 'SimHei']
 
     x = np.arange(24)
     # 创建一个图形和两个y轴
 
-    # 价格，柱状图
+
+    #价格，柱状图
     bar_width = 0.35
     plt.bar(x, PREDICT_ACTIONS_LIST, bar_width, align='center', color='#66c2a5', label='批发价')
     plt.bar(x + bar_width, ACTIONS_LIST, bar_width, align='center', color='#8da0cb', label='零售价')
@@ -262,6 +259,7 @@ def show (PREDICT_ACTIONS_LIST, ACTIONS_LIST, dataset, TOTAL_POWER_LIST, N_STATE
     # 在左侧显示图例
     plt.legend(loc="upper left")
 
+
     ax2 = plt.twinx()
     # 折线图 负荷
     plt.plot(x, dataset, 'b', label='优化前的负荷', marker='o')
@@ -270,29 +268,32 @@ def show (PREDICT_ACTIONS_LIST, ACTIONS_LIST, dataset, TOTAL_POWER_LIST, N_STATE
     plt.legend(loc="upper right")
     plt.show()
 
-def check_convergence(q_table, prev_q_table, n_episodes=10, threshold=CONVERGENCE_THRESHOLD):
-    if len(prev_q_table) >= n_episodes:
-        avg_rewards = [np.mean(prev_q_table.iloc[-episodes:], axis=1) for episodes in range(n_episodes)]
-        avg_rewards = np.mean(np.array(avg_rewards, dtype=object), axis=0)
-        if np.std(avg_rewards) < threshold:
-            return True
-    return False
+    return q_table
 
+
+def is_converged(q_table, prev_q_table, threshold=CONVERGENCE_THRESHOLD):
+    # 通过比较Q值的变化来检查Q表是否收敛
+    delta = np.abs(q_table - prev_q_table).values.max()
+    return delta < threshold
+
+
+
+def show():
+    dataset = load();
+    # 汉字字体，优先使用楷体，找不到则使用黑体
+    plt.rcParams['font.sans-serif'] = ['Kaitt', 'SimHei']
+
+    x = np.arange(24)
+    # 创建一个图形和两个y轴
+
+    # 折线图 负荷
+    plt.plot(x, dataset, 'b', marker='o')
+    plt.xlabel('时刻')
+    plt.ylabel('负荷/kWh')
+    plt.legend(loc="upper left")
+    plt.show()
 
 
 if __name__ == "__main__":
-    # q_table = test()
-    #批发价
-    PREDICT_ACTIONS_LIST = np.array([0.22,0.22,0.22,0.22,0.22,0.22,0.22,0.22,0.53,0.53,0.53,0.53,0.53,0.53,0.89,0.89,0.89,0.53,0.53,0.89,0.89,0.89,0.53,0.53])
-    #零售价
-    ACTIONS_LIST = np.array([0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.535,0.535,0.535,0.535,0.535,0.535,0.912,0.912,0.912,0.535,0.535,0.912,0.912,0.912,0.535,0.535])
-    #优化前的负荷
-    dataset = np.array([16983.56,17264.04,17346.396,17402.725,17416.346,17434.28,17391.139,17157.668,16331.379,15857.672,15797.048,15706.865,
-                        15685.816,15751.866,15977.747,16366.822,16681.82,16436.807,16467.055,16449.19,16545.725,16862.885,16878.27,16835.863])
-    #优化后的负荷
-    TOTAL_POWER_LIST = np.array([15902.789,16165.419,16242.535,16295.279,16308.033,16324.825,16284.431,16165.816,15299.614,14858.735,14802.3125,14618.38,
-                                 14598.79,14660.262,15057.326,15501.553,15616.434,15297.736,15325.889,15373.013,15589.029,15785.934,15708.605,15669.139])
-
-    N_STATES_LIST = np.arange(24)
-    show(PREDICT_ACTIONS_LIST, ACTIONS_LIST, dataset, TOTAL_POWER_LIST, N_STATES_LIST)
+    q_table = test()
 
