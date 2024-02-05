@@ -39,7 +39,7 @@ def run():
     train_data = [[sx.reshape(5, 1), sy.reshape(1, 1)] for sx, sy in zip(x_train, y_train)]
     test_data = [np.reshape(sx, (5, 1)) for sx in x_test]
     # 神经网络训练
-    bp1.MSGD(train_data, 1000, len(train_data), 0.2)
+    bp1.MSGD(train_data, 10000, len(train_data), 0.2)
     # 神经网络预测
     y_predict = bp1.predict(test_data)
     y_pre = np.array(y_predict)  # 列表转数组

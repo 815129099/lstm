@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2680c166-e01b-46aa-8499-c380d52fb12c" name="Default Changelist" comment="数据集">
+    <list default="true" id="2680c166-e01b-46aa-8499-c380d52fb12c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/LSTM.py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/LSTM.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/bpTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/bpTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/q_learning_01_13.py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/q_learning_01_13.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/compare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/new_data_nong_bp_v1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/new_data_nong_bp_v1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/new_data_nong_lstm_0903.csv" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/new_data_nong_lstm_0903.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,28 +17,29 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$q_learning_01_16.coverage" NAME="q_learning_01_16 Coverage Results" MODIFIED="1705475346574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
-    <SUITE FILE_PATH="coverage/LTSF_Linear_main$bpTest.coverage" NAME="bpTest Coverage Results" MODIFIED="1707014729266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
+    <SUITE FILE_PATH="coverage/LTSF_Linear_main$bpTest.coverage" NAME="bpTest Coverage Results" MODIFIED="1707103630897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$q_learning_01_13.coverage" NAME="q_learning_01_13 Coverage Results" MODIFIED="1705829354506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$feature2.coverage" NAME="feature2 Coverage Results" MODIFIED="1673850652051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$svm.coverage" NAME="svm Coverage Results" MODIFIED="1707014699587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$test.coverage" NAME="test Coverage Results" MODIFIED="1671367597475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
-    <SUITE FILE_PATH="coverage/LTSF_Linear_main$feature3.coverage" NAME="feature3 Coverage Results" MODIFIED="1671355733602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
-    <SUITE FILE_PATH="coverage/LTSF_Linear_main$compare.coverage" NAME="compare Coverage Results" MODIFIED="1707036266786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
-    <SUITE FILE_PATH="coverage/LTSF_Linear_main$nong.coverage" NAME="nong Coverage Results" MODIFIED="1675610568201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/nong" />
-    <SUITE FILE_PATH="coverage/LTSF_Linear_main$companyNongFu0903.coverage" NAME="companyNongFu0903 Coverage Results" MODIFIED="1694828974274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$month5.coverage" NAME="month5 Coverage Results" MODIFIED="1673851273294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$q_learning.coverage" NAME="q_learning Coverage Results" MODIFIED="1675511288770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/australian" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$svm_v1.coverage" NAME="svm_v1 Coverage Results" MODIFIED="1707014450785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$chapter1.coverage" NAME="chapter1 Coverage Results" MODIFIED="1673854917150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$australian.coverage" NAME="australian Coverage Results" MODIFIED="1673857966759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
+    <SUITE FILE_PATH="coverage/LTSF_Linear_main$companyNongFu.coverage" NAME="companyNongFu Coverage Results" MODIFIED="1694865024306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
+    <SUITE FILE_PATH="coverage/LTSF_Linear_main$q_learning_12_30.coverage" NAME="q_learning_12_30 Coverage Results" MODIFIED="1705121850520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
+    <SUITE FILE_PATH="coverage/LTSF_Linear_main$compare_v1.coverage" NAME="compare_v1 Coverage Results" MODIFIED="1707104950810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
+    <SUITE FILE_PATH="coverage/LTSF_Linear_main$feature3.coverage" NAME="feature3 Coverage Results" MODIFIED="1671355733602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
+    <SUITE FILE_PATH="coverage/LTSF_Linear_main$compare.coverage" NAME="compare Coverage Results" MODIFIED="1707105992591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
+    <SUITE FILE_PATH="coverage/LTSF_Linear_main$nong.coverage" NAME="nong Coverage Results" MODIFIED="1675610568201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/nong" />
+    <SUITE FILE_PATH="coverage/LTSF_Linear_main$companyNongFu0903.coverage" NAME="companyNongFu0903 Coverage Results" MODIFIED="1694828974274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$companyNongFu0902.coverage" NAME="companyNongFu0902 Coverage Results" MODIFIED="1704610668424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$q_learning_12_31.coverage" NAME="q_learning_12_31 Coverage Results" MODIFIED="1705131736173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$Nongfuspring.coverage" NAME="Nongfuspring Coverage Results" MODIFIED="1675688977341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/Nongfuspring" />
-    <SUITE FILE_PATH="coverage/LTSF_Linear_main$companyNongFu.coverage" NAME="companyNongFu Coverage Results" MODIFIED="1694865024306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$Demo_RNN_time_seq_predict.coverage" NAME="Demo_RNN_time_seq_predict Coverage Results" MODIFIED="1671367664295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
-    <SUITE FILE_PATH="coverage/LTSF_Linear_main$LSTM.coverage" NAME="LSTM Coverage Results" MODIFIED="1707014949105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
+    <SUITE FILE_PATH="coverage/LTSF_Linear_main$LSTM.coverage" NAME="LSTM Coverage Results" MODIFIED="1707105974828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$feature1.coverage" NAME="feature1 Coverage Results" MODIFIED="1673850628426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
-    <SUITE FILE_PATH="coverage/LTSF_Linear_main$q_learning_12_30.coverage" NAME="q_learning_12_30 Coverage Results" MODIFIED="1705121850520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$newCompanyNongFu.coverage" NAME="newCompanyNongFu Coverage Results" MODIFIED="1693722913223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
   </component>
   <component name="DatabaseView">
@@ -55,19 +59,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/companyNongFu1230.py">
+        <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/compare.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="284" column="26" lean-forward="true" selection-start-line="284" selection-start-column="26" selection-end-line="284" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/companyNongFu.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1961">
-              <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+            <state relative-caret-position="45">
+              <caret line="110" column="35" lean-forward="true" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
               <folding>
                 <element signature="e#4#22#0" expanded="true" />
               </folding>
@@ -75,23 +70,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/LSTM.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/compare.py">
+        <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/q_learning_12_31.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-141">
-              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+            <state relative-caret-position="318">
+              <caret line="129" column="44" lean-forward="true" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
+              <folding>
+                <element signature="e#353#371#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/bpTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="946">
-              <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+            <state relative-caret-position="349">
+              <caret line="72" column="24" lean-forward="true" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="47" />
               <folding>
                 <element signature="e#24#42#0" expanded="true" />
               </folding>
@@ -109,21 +95,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/svm.py">
+        <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/LSTM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="55" column="57" lean-forward="true" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/svm_v1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="24" selection-end-column="23" />
+            <state relative-caret-position="-572">
+              <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
               <folding>
-                <element signature="e#0#48#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,10 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>reshape</find>
-      <find>ACTIONS</find>
-      <find>episode</find>
-      <find>ALPHA</find>
       <find>D_MIN</find>
       <find>plt</find>
       <find>PREDICT_ACTION</find>
@@ -170,6 +143,10 @@
       <find>LSTM</find>
       <find>run</find>
       <find>Dense</find>
+      <find>MinMaxScaler</find>
+      <find>mpl</find>
+      <find>inverse_transform_col</find>
+      <find>y_predict</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -219,12 +196,13 @@
         <option value="$PROJECT_DIR$/lwx/companyNongFu/companyNongFu0113.py" />
         <option value="$PROJECT_DIR$/lwx/companyNongFu/q_learning_01_16.py" />
         <option value="$PROJECT_DIR$/lwx/companyNongFu/q_learning_01_13.py" />
-        <option value="$PROJECT_DIR$/lwx/companyNongFu/bpTest.py" />
         <option value="$PROJECT_DIR$/lwx/companyNongFu/svm_v1.py" />
         <option value="$PROJECT_DIR$/lwx/companyNongFu/svm.py" />
         <option value="$PROJECT_DIR$/lwx/companyNongFu/companyNongFu0903.py" />
-        <option value="$PROJECT_DIR$/lwx/companyNongFu/LSTM.py" />
+        <option value="$PROJECT_DIR$/lwx/companyNongFu/compare_v1.py" />
+        <option value="$PROJECT_DIR$/lwx/companyNongFu/bpTest.py" />
         <option value="$PROJECT_DIR$/lwx/companyNongFu/compare.py" />
+        <option value="$PROJECT_DIR$/lwx/companyNongFu/LSTM.py" />
       </list>
     </option>
   </component>
@@ -240,7 +218,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -299,6 +276,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -309,15 +287,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\lunwengit\LTSF-Linear-main\lwx\australian" />
-      <recent name="D:\lunwengit\LTSF-Linear-main" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\lunwengit\LTSF-Linear-main\lwx\companyNongFu" />
       <recent name="D:\lunwengit\LTSF-Linear-main\lwx" />
       <recent name="D:\lunwengit\LTSF-Linear-main\lwx\australian" />
       <recent name="D:\lunwengit\LTSF-Linear-main\Pyraformer\lwx" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\lunwengit\LTSF-Linear-main\lwx\australian" />
+      <recent name="D:\lunwengit\LTSF-Linear-main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -399,6 +377,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="compare_v1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="LTSF-Linear-main" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lwx/companyNongFu" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lwx/companyNongFu/compare_v1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="svm" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="LTSF-Linear-main" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -421,35 +421,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="svm_v1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="LTSF-Linear-main" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lwx/companyNongFu" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lwx/companyNongFu/svm_v1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.compare" />
         <item itemvalue="Python.LSTM" />
+        <item itemvalue="Python.compare_v1" />
         <item itemvalue="Python.bpTest" />
         <item itemvalue="Python.svm" />
-        <item itemvalue="Python.svm_v1" />
       </list>
     </recent_temporary>
   </component>
@@ -494,7 +472,8 @@
       <workItem from="1705117972865" duration="39240000" />
       <workItem from="1705363133155" duration="10485000" />
       <workItem from="1705827205014" duration="2178000" />
-      <workItem from="1707011182942" duration="10190000" />
+      <workItem from="1707011182942" duration="12046000" />
+      <workItem from="1707052751981" duration="13886000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1685772724431</created>
@@ -566,22 +545,29 @@
       <option name="project" value="LOCAL" />
       <updated>1705229181660</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="引入svm">
+      <created>1707038264621</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707038264621</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234907000" />
+    <option name="totallyTimeSpent" value="250649000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18900804" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19168901" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.033994336" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5609065" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.49150142" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -595,7 +581,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.81099194" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.808311" />
       <window_info anchor="right" id="Database" order="4" weight="0.3297587" />
     </layout>
   </component>
@@ -651,7 +637,8 @@
     <MESSAGE value="提交" />
     <MESSAGE value="01-13" />
     <MESSAGE value="01-14" />
-    <option name="LAST_COMMIT_MESSAGE" value="01-14" />
+    <MESSAGE value="引入svm" />
+    <option name="LAST_COMMIT_MESSAGE" value="引入svm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -842,9 +829,34 @@
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lwx/companyNongFu/compare.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lwx/companyNongFu/compare.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lwx/companyNongFu/bpTest.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="111" />
+          <line>49</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lwx/companyNongFu/bpTest.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lwx/companyNongFu/bpTest.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lwx/companyNongFu/bpTest.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="125" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -871,81 +883,58 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>df1[[df1.columns[4]]]</expression-string>
+        <expression-string>df0[;, 1] = df1['month']</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>df1[[4]]</expression-string>
+        <expression-string>df0[;,0] = df1['month']</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>)  # 只对第5列进行归一化</expression-string>
+        <expression-string>df0[0] = df1['month']</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>x_train.values</expression-string>
+        <expression-string>df1['month']</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>0.95 * ((0.591 - 0.5)*18799.27) -(1-0.95) * (0.591*18799.27 +(0.01*(predict_participate_power - actual_participate_power)*(predict_participate_power - actual_participate_power) + BETA*(predict_participate_power - actual_participate_power)))</expression-string>
+        <expression-string>df0[0] = df1.columns['power_num']</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>(0.591-0.5)*18799.27</expression-string>
+        <expression-string>df0[0] = df1.columns[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>wholesale_price</expression-string>
+        <expression-string>df0[0] = df1[[df1.columns[0]]]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>(1+ELASTIC_COEFFICIENT[flag]*((A-wholesale_price)/wholesale_price))</expression-string>
+        <expression-string>y -= scaler.min_[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>ELASTIC_COEFFICIENT[flag]</expression-string>
+        <expression-string>y -= scaler.min_[4]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>y_pre = inverse_transform_col(min_max_scaler, y_pre, n_col=2)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lwx/australian/australian.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
-          <folding>
-            <element signature="e#4#22#0" expanded="true" />
-            <element signature="e#938#3574#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lwx/feature3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="42" selection-start-line="42" selection-end-line="46" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lwx/feature2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
-          <folding>
-            <element signature="e#4#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lwx/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -986,13 +975,6 @@
     <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://D:/Anaconda3/envs/ltsf/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="311" selection-start-line="311" selection-end-line="311" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-797154581/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1004,13 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="531" column="8" selection-start-line="531" selection-start-column="8" selection-end-line="531" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/sklearn/preprocessing/_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="376" column="8" selection-start-line="376" selection-start-column="8" selection-end-line="376" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1175,27 +1150,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Anaconda3/envs/ltsf/Lib/site-packages/pandas/core/indexes/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3360" selection-start-line="3360" selection-end-line="3360" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/companyNongFu0113.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="946">
           <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/q_learning_12_31.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="169" selection-start-line="169" selection-end-line="171" selection-end-column="17" />
-          <folding>
-            <element signature="e#353#371#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1240,13 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/sklearn/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="580" selection-start-line="580" selection-end-line="580" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Anaconda3/envs/ltsf/Lib/site-packages/pandas/core/frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -1254,20 +1205,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/Anaconda3/envs/ltsf/Lib/site-packages/tensorflow/python/framework/dtypes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="515" selection-start-line="515" selection-end-line="515" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/companyNongFu1230.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1588">
+          <caret line="284" column="26" selection-start-line="284" selection-start-column="26" selection-end-line="284" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3/envs/ltsf/numpy/__init__.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="1896" column="8" selection-start-line="1896" selection-start-column="8" selection-end-line="1896" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/svm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="829">
+          <caret line="55" column="57" lean-forward="true" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/sklearn/preprocessing/_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="376" column="8" selection-start-line="376" selection-start-column="8" selection-end-line="376" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/sklearn/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="823" column="8" selection-start-line="823" selection-start-column="8" selection-end-line="823" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3/envs/ltsf/Lib/site-packages/pandas/core/indexes/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="3362" selection-start-line="3362" selection-end-line="3362" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3/envs/ltsf/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/compare_v1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="51" column="54" lean-forward="true" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/svm_v1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="24" selection-end-column="23" />
+        <state relative-caret-position="170">
+          <caret line="21" selection-start-line="21" selection-end-line="21" selection-end-column="78" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/companyNongFu0903.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-149">
+          <caret line="147" column="26" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="26" />
+          <folding>
+            <element signature="e#4#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/companyNongFu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1961">
-          <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+        <state relative-caret-position="246">
+          <caret line="141" column="22" lean-forward="true" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
           <folding>
             <element signature="e#4#22#0" expanded="true" />
           </folding>
@@ -1276,42 +1303,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/bpTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+        <state relative-caret-position="349">
+          <caret line="72" column="24" lean-forward="true" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="47" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/svm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="55" column="57" lean-forward="true" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/companyNongFu0903.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="e#4#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/companyNongFu1230.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="284" column="26" lean-forward="true" selection-start-line="284" selection-start-column="26" selection-end-line="284" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/LSTM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        <state relative-caret-position="-572">
+          <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -1320,8 +1323,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/compare.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="45">
+          <caret line="110" column="35" lean-forward="true" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
+          <folding>
+            <element signature="e#4#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/q_learning_12_31.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="129" column="44" lean-forward="true" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
+          <folding>
+            <element signature="e#353#371#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

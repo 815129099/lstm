@@ -2,53 +2,79 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_absolute_percentage_error, mean_squared_error
 from keras.models import Sequential
 from keras.layers import LSTM, Dense
 
-def create_dataset(data, look_back=1):
-    X, Y = [], []
-    for i in range(len(data) - look_back):
-        X.append(data[i:(i + look_back), 0])
-        Y.append(data[i + look_back, 0])
-    return np.array(X), np.array(Y)
+def create_lstm_model(input_shape):
+    model = Sequential()
+    model.add(LSTM(50, input_shape=(input_shape[1], input_shape[2])))
+    model.add(Dense(1))
+    model.compile(optimizer='adam', loss='mean_squared_error')
+    return model
 
 def run():
-    # 导入数据
-    df = pd.read_csv('./data_nong_1.csv', usecols=[4])
-    dataset = df.values.astype('float32')
+    # 加载和预处理数据
+    df1 = pd.read_csv('./data_nong_1.csv')
+    min_max_scaler = MinMaxScaler()
+    df0 = min_max_scaler.fit_transform(df1.iloc[:, 4].values.reshape(-1, 1))
+    df = pd.DataFrame(df0, columns=['power_num'])
 
-    # 归一化数据
-    scaler = MinMaxScaler(feature_range=(0, 1))
-    dataset = scaler.fit_transform(dataset)
+    # 为LSTM准备数据
+    sequence_length = 24  # 一天的数据
+    x, y = [], []
+    for i in range(len(df) - sequence_length + 1):
+        x.append(df.iloc[i:i + sequence_length, :].values)
+        y.append(df.iloc[i + sequence_length - 1, 0])
 
-    # 创建输入数据集
-    look_back = 5  # 可调整的时间步长，根据实际情况设置
-    X, Y = create_dataset(dataset, look_back)
+    x, y = np.array(x), np.array(y)
+    x = np.reshape(x, (x.shape[0], x.shape[1], 1))  # 增加一个维度
 
-    # 将数据集重塑为符合LSTM要求的形状 [样本数, 时间步长, 特征数]
-    X = np.reshape(X, (X.shape[0], X.shape[1], 1))
+    # 将数据分为训练集和测试集
+    train_size = int(len(df) * 0.75)
+    x_train, x_test = x[:train_size], x[train_size:]
+    y_train, y_test = y[:train_size], y[train_size:]
 
-    # 构建LSTM模型
-    model = Sequential()
-    model.add(LSTM(units=50, input_shape=(look_back, 1)))
-    model.add(Dense(units=1))
-    model.compile(optimizer='adam', loss='mean_squared_error')
+    # 创建LSTM模型
+    model = create_lstm_model(x_train.shape)
 
-    # 拟合模型
-    model.fit(X, Y, epochs=100, batch_size=1, verbose=2)
+    # 打印模型摘要
+    print(model.summary())
 
-    # 使用训练好的模型进行预测
-    test_data = dataset[len(dataset) - look_back:, :]
-    test_data = np.reshape(test_data, (1, len(test_data), 1))
-    predicted_values = model.predict(test_data)
-    predicted_values = scaler.inverse_transform(predicted_values)
+    # 训练模型
+    model.fit(x_train, y_train, epochs=14, batch_size=32)
 
-    # 画图
-    train_data = scaler.inverse_transform(dataset)
-    plt.plot(train_data, label='True Data')
-    plt.plot(range(len(train_data), len(train_data) + len(predicted_values[0])), predicted_values[0], label='Predicted Data')
-    plt.legend()
+    # 进行预测
+    y_predict = model.predict(x_test)
+    y_predict = y_predict.reshape(-1, 1)
+
+    # 对预测值和实际值进行反归一化
+    y_predict = min_max_scaler.inverse_transform(np.hstack([np.zeros((len(y_predict), 1)), y_predict]))
+    y_predict = y_predict[:, -1]
+
+    # 反序列化实际值
+    y_test = min_max_scaler.inverse_transform(np.hstack([np.zeros((len(y_test), 1)), y_test.reshape(-1, 1)]))
+    y_test = y_test[:, -1]
+
+    # 绘制结果
+    draw = pd.concat([pd.DataFrame(y_test), pd.DataFrame(y_predict)], axis=1)
+    draw.iloc[:, 0].plot(figsize=(12, 6))
+    draw.iloc[:, 1].plot(figsize=(12, 6))
+    plt.legend(('real', 'lstm'), loc='upper right', fontsize='15')
+    plt.title("test", fontsize='30')
     plt.show()
 
+    # 输出评估指标
+    mase = mean_absolute_percentage_error(y_predict, y_test)
+    rmse = np.sqrt(mean_squared_error(y_predict, y_test))
+    print("MAPE: {}, RMSE: {}".format(mase, rmse))
+
+    # 将结果保存到新的CSV文件
+    real_data_csv = pd.DataFrame(data=y_test, columns=['real'])
+    pred_data_csv = pd.DataFrame(data=y_predict, columns=['lstm'])
+    dataframe = real_data_csv.join(pred_data_csv)
+    dataframe.to_csv('./new_data_nong_lstm_v1.csv', index=False, mode='w', sep=',')
+
+# 运行脚本
 if __name__ == '__main__':
     run()
