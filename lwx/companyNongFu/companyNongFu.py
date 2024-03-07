@@ -8,6 +8,10 @@ from torch.autograd import Variable
 #画图
 import matplotlib.pyplot as plt
 from sklearn import preprocessing
+from sklearn.metrics import mean_absolute_percentage_error
+from sklearn.metrics import mean_squared_error
+from pylab import *
+mpl.rcParams['font.sans-serif'] = ['SimHei']
 
 # 这里定义好模型，模型的第一部分是一个两层的 RNN，每一步模型接受两个月的输入作为特征，
 # 得到一个输出特征。接着通过一个线性层将 RNN 的输出回归到流量的具体数值，这里我们需要用 view 来重新排列，
@@ -200,11 +204,14 @@ def showData():
     dataset = data_csv.values
     #对数据类型进行转换
     dataset = dataset.astype('float32')
-    date_num = int(len(dataset) / 24)
-    for e in range(date_num):
-        dataset1 = dataset[e * 24:(e + 1) * 24]
-        plt.plot(dataset1)
-        plt.show()
+    plt.plot(dataset)
+    plt.xlabel("时间点/h")
+    plt.ylabel("负荷/kW")
+    plt.show()
+    # date_num = int(len(dataset) / 24)
+    # for e in range(date_num):
+    #     dataset1 = dataset[e * 24:(e + 1) * 24]
+
 
 
 if __name__ == '__main__':
@@ -212,5 +219,5 @@ if __name__ == '__main__':
     # run()
     #加载模型
     # load()
-    #显示数据
+    #显示所有数据集
     showData()

@@ -256,18 +256,18 @@ def show (PREDICT_ACTIONS_LIST, ACTIONS_LIST, dataset, TOTAL_POWER_LIST, N_STATE
     bar_width = 0.35
     plt.bar(x, PREDICT_ACTIONS_LIST, bar_width, align='center', color='#66c2a5', label='批发价')
     plt.bar(x + bar_width, ACTIONS_LIST, bar_width, align='center', color='#8da0cb', label='零售价')
-    plt.xlabel('时刻')
+    plt.xlabel('时间点/h')
     plt.ylabel('价格/元')
     plt.xticks(x + bar_width / 2, N_STATES_LIST)
     # 在左侧显示图例
-    plt.legend(loc="upper left")
+    plt.legend(bbox_to_anchor=(0.56, 0.88))
 
     ax2 = plt.twinx()
     # 折线图 负荷
-    plt.plot(x, dataset, 'b', label='优化前的负荷', marker='o')
-    plt.plot(x, TOTAL_POWER_LIST, 'r', label='优化后的负荷', marker='o')
+    plt.plot(x, dataset, 'b', label='优化前负荷', marker='o')
+    plt.plot(x, TOTAL_POWER_LIST, 'r', label='优化后负荷', marker='o')
     ax2.set_ylabel('负荷/kWh')
-    plt.legend(loc="upper right")
+    plt.legend(bbox_to_anchor=(0.32, 1.0))
     plt.show()
 
 def check_convergence(q_table, prev_q_table, n_episodes=10, threshold=CONVERGENCE_THRESHOLD):
@@ -278,10 +278,8 @@ def check_convergence(q_table, prev_q_table, n_episodes=10, threshold=CONVERGENC
             return True
     return False
 
-
-
-if __name__ == "__main__":
-    # q_table = test()
+# 0.3
+def show1() :
     #批发价
     PREDICT_ACTIONS_LIST = np.array([0.22,0.22,0.22,0.22,0.22,0.22,0.22,0.22,0.53,0.53,0.53,0.53,0.53,0.53,0.89,0.89,0.89,0.53,0.53,0.89,0.89,0.89,0.53,0.53])
     #零售价
@@ -295,4 +293,44 @@ if __name__ == "__main__":
 
     N_STATES_LIST = np.arange(24)
     show(PREDICT_ACTIONS_LIST, ACTIONS_LIST, dataset, TOTAL_POWER_LIST, N_STATES_LIST)
+
+# 0.6
+def show2() :
+    #批发价
+    PREDICT_ACTIONS_LIST = np.array([0.22,0.22,0.22,0.22,0.22,0.22,0.22,0.22,0.53,0.53,0.53,0.53,0.53,0.53,0.89,0.89,0.89,0.53,0.53,0.89,0.89,0.89,0.53,0.53])
+    #零售价
+    ACTIONS_LIST = np.array([0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.582,0.582,0.582,0.582,0.582,0.582,0.912,0.912,0.912,0.582,0.582,0.912,0.912,0.912,0.582,0.582])
+    #优化前的负荷
+    dataset = np.array([16983.56,17264.04,17346.396,17402.725,17416.346,17434.28,17391.139,17157.668,16331.379,15857.672,15797.048,15706.865,
+                        15685.816,15751.866,15977.747,16366.822,16681.82,16436.807,16467.055,16449.19,16545.725,16862.885,16878.27,16835.863])
+    #优化后的负荷
+    TOTAL_POWER_LIST = np.array([15902.789,16165.419,16242.535,16295.279,16308.033,16324.825,16284.431,16065.816,15199.614,14758.735,14702.3125,14618.38,14598.79,14660.262,14957.326,
+15321.553,15616.434,15297.736,15325.889,14973.013,15489.029,15785.934,15708.605,15669.139])
+
+    N_STATES_LIST = np.arange(24)
+    show(PREDICT_ACTIONS_LIST, ACTIONS_LIST, dataset, TOTAL_POWER_LIST, N_STATES_LIST)
+
+# 0.9
+def show3() :
+    #批发价
+    PREDICT_ACTIONS_LIST = np.array([0.22,0.22,0.22,0.22,0.22,0.22,0.22,0.22,0.53,0.53,0.53,0.53,0.53,0.53,0.89,0.89,0.89,0.53,0.53,0.89,0.89,0.89,0.53,0.53])
+    #零售价
+    ACTIONS_LIST = np.array([0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.664,0.664,0.664,0.664,0.664,0.664,1.027,1.027,1.027,0.664,0.664,1.027,1.027,1.027,0.664,0.664])
+    #优化前的负荷
+    dataset = np.array([16983.56,17264.04,17346.396,17402.725,17416.346,17434.28,17391.139,17157.668,16331.379,15857.672,15797.048,15706.865,
+                        15685.816,15751.866,15977.747,16366.822,16681.82,16436.807,16467.055,16449.19,16545.725,16862.885,16878.27,16835.863])
+    #优化后的负荷
+    TOTAL_POWER_LIST = np.array([15902.789,16165.419,16242.535,16295.279,16308.033,16324.825,16284.431,16065.816,14799.495,14370.223,14315.285,14233.562,14214.487,14274.342,14565.997,14920.694,
+15207.861,14895.034,14922.445,14995.783,15083.789,15372.926,16157.566,16116.973])
+
+    N_STATES_LIST = np.arange(24)
+    show(PREDICT_ACTIONS_LIST, ACTIONS_LIST, dataset, TOTAL_POWER_LIST, N_STATES_LIST)
+
+if __name__ == "__main__":
+    #0.9
+    # show1()
+    # 0.6
+    # show2()
+    #
+    show3()
 

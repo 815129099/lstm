@@ -19,18 +19,18 @@ TIME_DICT = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:1,9:1,10:1,11:1,12:1,13:1,14:2,15
 N_STATES = 24   # 状态 t时刻
 PREDICT_ACTIONS = np.array([0.22, 0.53, 0.89]) #批发电价
 BEFORE_ACTIONS = np.array([0.2465, 0.5417, 0.8623]) #原来电价
-ACTIONS = np.round(np.linspace(0.22, 1.3, num=24), decimals=3)     # 动作，离散化   零售价
+ACTIONS = np.round(np.linspace(0.22, 1.1, num=24), decimals=3)     # 动作，离散化   零售价
 EPSILON = 0.9   # 90%取奖励最大的动作
 LEARNING_RATE = 0.1     # 10%取随机动作 学习率
 GAMMA = 0.9    # 奖励折扣
-MAX_EPISODES = 50000  # maximum episodes  最大回合
+MAX_EPISODES = 500000  # maximum episodes  最大回合
 WEIGHT_FACTOR = 0.85  #权值因子
 ALPHA = 0.01 #  用户不满意成本偏好参数
 BETA = 0.01 #   用户不满意成本预设参数
 D_MIN = 0.1 #  可需求响应负荷最小占比
 D_MAX = 0.5 #  可需求响应负荷最大占比
 K = 0.3  # 不可参与需求响应负荷占总负荷的占比
-ELASTIC_COEFFICIENT = np.array([-0.25, -0.53, -0.7])  #谷、平、峰需求响应的弹性系数
+ELASTIC_COEFFICIENT = np.array([-0.25, -0.53, -0.8])  #谷、平、峰需求响应的弹性系数
 ACTIONS_LIST = []  #回报最高的零售价
 PARTICIPATE_POWER_LIST = [0 for _ in range(N_STATES)]  #回报最高的可参与需求响应的负荷
 NO_PARTICIPATE_POWER_LIST = [0 for _ in range(N_STATES)]  #回报最高的不参与需求响应的负荷
@@ -234,7 +234,7 @@ def test():
     bar_width = 0.35
     plt.bar(x, PREDICT_ACTIONS_LIST, bar_width, align='center', color='#66c2a5', label='批发价')
     plt.bar(x + bar_width, ACTIONS_LIST, bar_width, align='center', color='#8da0cb', label='零售价')
-    plt.xlabel('时刻')
+    plt.xlabel('时间点/h')
     plt.ylabel('价格/元')
     plt.xticks(x + bar_width / 2, N_STATES_LIST)
     # 在左侧显示图例
@@ -261,7 +261,7 @@ def show():
 
     # 折线图 负荷
     plt.plot(x, dataset, 'b', marker='o')
-    plt.xlabel('时刻')
+    plt.xlabel('时间点/h')
     plt.ylabel('负荷/kWh')
     plt.legend(loc="upper left")
     plt.show()

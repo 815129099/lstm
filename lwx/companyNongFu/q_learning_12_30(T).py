@@ -22,9 +22,9 @@ ACTIONS = np.round(np.linspace(0.3, 1.1, num=12), decimals=3)     # 动作，离
 EPSILON = 0.9   # 90%取奖励最大的动作
 LEARNING_RATE = 0.1     # 10%取随机动作 学习率
 GAMMA = 0.9    # 奖励折扣
-MAX_EPISODES = 100  # maximum episodes  最大回合
+MAX_EPISODES = 1000  # maximum episodes  最大回合
 FRESH_TIME = 0.3    # fresh time for one move  移动间隔
-WEIGHT_FACTOR = 0.95  #权值因子
+WEIGHT_FACTOR = 0.8  #权值因子
 ALPHA = 0.01 #  用户不满意成本偏好参数
 BETA = 0.01 #   用户不满意成本预设参数
 D_MIN = 0.1 #  可需求响应负荷最小占比
@@ -234,7 +234,7 @@ def test():
     bar_width = 0.35
     plt.bar(x, PREDICT_ACTIONS_LIST, bar_width, align='center', color='#66c2a5', label='批发价')
     plt.bar(x + bar_width, ACTIONS_LIST, bar_width, align='center', color='#8da0cb', label='零售价')
-    plt.xlabel('时刻')
+    plt.xlabel('时间点/h')
     plt.ylabel('价格/元')
     plt.xticks(x + bar_width / 2, N_STATES_LIST)
     # 在左侧显示图例
@@ -260,15 +260,15 @@ def show():
     # 创建一个图形和两个y轴
 
     # 折线图 负荷
-    plt.plot(x, dataset, 'b', marker='o')
-    plt.xlabel('时刻')
+    plt.plot(x, dataset, 'b', marker='o',label='负荷')
+    plt.xlabel('时间点/h')
     plt.ylabel('负荷/kWh')
-    plt.legend(loc="upper left")
+    # plt.legend(loc="upper center")
     plt.show()
 
 
 if __name__ == "__main__":
-    q_table = test()
-    # print('\r\nQ-table:\n')
-    # show()
+    # q_table = test()
+    # 单日负荷
+    show()
 
