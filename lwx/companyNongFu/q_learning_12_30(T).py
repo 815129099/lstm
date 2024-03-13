@@ -18,13 +18,13 @@ np.random.seed(2)  # reproducible
 TIME_DICT = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:1,9:1,10:1,11:1,12:1,13:1,14:2,15:2,16:2,17:1,18:1,19:2,20:2,21:2,22:1,23:1}  #峰平谷
 N_STATES = 24   # 状态 t时刻
 PREDICT_ACTIONS = np.array([0.22, 0.53, 0.89]) #批发电价
-ACTIONS = np.round(np.linspace(0.3, 1.1, num=12), decimals=3)     # 动作，离散化   零售价
-EPSILON = 0.9   # 90%取奖励最大的动作
-LEARNING_RATE = 0.1     # 10%取随机动作 学习率
+ACTIONS = np.round(np.linspace(0.3, 1.1, num=24), decimals=3)     # 动作，离散化   零售价
+EPSILON = 0.95   # 90%取奖励最大的动作
+LEARNING_RATE = 0.05     # 10%取随机动作 学习率
 GAMMA = 0.9    # 奖励折扣
 MAX_EPISODES = 1000  # maximum episodes  最大回合
 FRESH_TIME = 0.3    # fresh time for one move  移动间隔
-WEIGHT_FACTOR = 0.8  #权值因子
+WEIGHT_FACTOR = 0.9  #权值因子
 ALPHA = 0.01 #  用户不满意成本偏好参数
 BETA = 0.01 #   用户不满意成本预设参数
 D_MIN = 0.1 #  可需求响应负荷最小占比
@@ -54,7 +54,6 @@ def build_q_table(n_states, actions):
 
 # 选择回报最大的action
 def choose_action(S, q_table,dataset):
-    # This is how to choose an action
     #获取该state那一行
     state_actions = q_table.iloc[S, :]
     if (np.random.uniform() > EPSILON):  # act non-greedy or state-action have no value
@@ -65,10 +64,11 @@ def choose_action(S, q_table,dataset):
         mix_r = -sys.maxsize-1
         action_name = state_actions.idxmax()    # replace argmax to idxmax as argmax means a different function in newer version of pandas
         for i in range(len(ACTIONS)):
-            S_, R = get_env_feedback(S, ACTIONS[i], dataset, 0)
-            if (mix_r < R):
-                mix_r = R
-                action_name = ACTIONS[i]
+            if ACTIONS[i] >= PREDICT_ACTIONS[TIME_DICT[S]]*1.1 :
+                S_, R = get_env_feedback(S, ACTIONS[i], dataset, 0)
+                if (mix_r < R):
+                    mix_r = R
+                    action_name = ACTIONS[i]
     return action_name
 
 # S指时刻，A->S时刻时电价，dataset->负荷集合
@@ -268,7 +268,7 @@ def show():
 
 
 if __name__ == "__main__":
-    # q_table = test()
+    q_table = test()
     # 单日负荷
-    show()
+    # show()
 

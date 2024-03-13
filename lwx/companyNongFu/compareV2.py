@@ -64,8 +64,8 @@ def showData():
     svm_total_data = 0
     real_total_data = 0
     for e in range(date_num):
-        if (e < 20):
-            continue
+        # if (e < 20):
+        #     continue
         lstm_current_data = lstm_data_set[e*24:(e+1)*24]
         bp_current_data = bp_data_set[e*24:(e+1)*24]
         svm_current_data = svm_data_set[e*24:(e+1)*24]
@@ -113,9 +113,9 @@ def showData():
     print("lstm_total mape:{}, mse:{},rmse:{}",mean_absolute_percentage_error(real_total_data, lstm_total_data), mean_squared_error(real_total_data, lstm_total_data), np.sqrt(mean_squared_error(real_total_data, lstm_total_data)))
     print("bp_total mape:{}, mse:{},rmse:{}",mean_absolute_percentage_error(real_total_data, bp_total_data), mean_squared_error(real_total_data, bp_total_data), np.sqrt(mean_squared_error(real_total_data, bp_total_data)))
     print("svm_total mape:{}, mse:{},rmse:{}",mean_absolute_percentage_error(real_total_data, svm_total_data), mean_squared_error(real_total_data, svm_total_data), np.sqrt(mean_squared_error(real_total_data, svm_total_data)))
-    lstm_min_data = lstm_min_data[-7*24:]
-    bp_min_data = bp_min_data[-7*24:]
-    svm_min_data = svm_min_data[-7*24:]
+    lstm_min_data = lstm_min_data[-11*24:-10*24]
+    bp_min_data = bp_min_data[-11*24:-10*24]
+    svm_min_data = svm_min_data[-11*24:-10*24]
 
     real = lstm_min_data[+0:, 0]  #取电量值
     lstm_pred = lstm_min_data[+0:, 1]  #取电量值
