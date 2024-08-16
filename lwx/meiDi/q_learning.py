@@ -17,21 +17,20 @@ np.random.seed(2)  # reproducible
 
 TIME_DICT = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:1,9:2,10:2,11:2,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:2,20:2,21:2,22:1,23:1}  #峰平谷
 N_STATES = 24   # 状态 t时刻
-PREDICT_ACTIONS = np.array([0.3, 0.6, 0.9]) #批发电价
+PREDICT_ACTIONS = np.array([0.29, 0.64, 0.89]) #批发电价
 BEFORE_ACTIONS = np.array([0.3647, 0.6805, 1.0911]) #原来电价
-ACTIONS = np.round(np.linspace(0.3, 1.2, num=24), decimals=3)     # 动作，离散化   零售价
+ACTIONS = np.round(np.linspace(0.32, 1.2, num=18), decimals=3)     # 动作，离散化   零售价
 EPSILON = 0.95   # 90%取奖励最大的动作
 LEARNING_RATE = 0.05     # 10%取随机动作 学习率
 GAMMA = 0.9    # 奖励折扣
-MAX_EPISODES = 10000  # maximum episodes  最大回合
-FRESH_TIME = 0.3    # fresh time for one move  移动间隔
-WEIGHT_FACTOR = 0.5  #权值因子
+MAX_EPISODES = 100000  # maximum episodes  最大回合
+WEIGHT_FACTOR = 0.8  #权值因子
 ALPHA = 0.01 #  用户不满意成本偏好参数
 BETA = 0.01 #   用户不满意成本预设参数
 D_MIN = 0.1 #  可需求响应负荷最小占比
 D_MAX = 0.5 #  可需求响应负荷最大占比
-K = 0.3  # 不可参与需求响应负荷占总负荷的占比
-ELASTIC_COEFFICIENT = np.array([-0.25, -0.53, -0.82])  #谷、平、峰需求响应的弹性系数
+K = 0.2  # 不可参与需求响应负荷占总负荷的占比
+ELASTIC_COEFFICIENT = np.array([-0.7, -0.58, -0.52])  #谷、平、峰需求响应的弹性系数
 ACTIONS_LIST = []  #回报最高的零售价
 PARTICIPATE_POWER_LIST = [0 for _ in range(N_STATES)]  #回报最高的可参与需求响应的负荷
 NO_PARTICIPATE_POWER_LIST = [0 for _ in range(N_STATES)]  #回报最高的不参与需求响应的负荷
@@ -107,7 +106,8 @@ def get_env_feedback(S, A, dataset, type):
     profit = (A - wholesale_price)*actual_power
 
     #居民用电成本
-    total_cost = A*actual_power +unsatisfied_cost
+    # total_cost = A*actual_power +unsatisfied_cost
+    total_cost = (A - wholesale_price)*actual_power +unsatisfied_cost
 
     #WEIGHT_FACTOR 权值因子
     #总回报
@@ -119,24 +119,9 @@ def get_env_feedback(S, A, dataset, type):
         TOTAL_POWER_LIST[S] = actual_no_participate_power+actual_participate_power
     return S_, R
 
-#更新环境
-def update_env(S, episode, step_counter):
-    # This is how environment be updated
-    env_list = ['-']*(N_STATES-1) + ['T']   # '---------T' our environment
-    if S == 'terminal':
-        interaction = 'Episode %s: total_steps = %s' % (episode+1, step_counter)
-        print('\r{}'.format(interaction), end='')
-        time.sleep(2)
-        print('\r                                ', end='')
-    else:
-        env_list[S] = 'o'
-        interaction = ''.join(env_list)
-        print('\r{}'.format(interaction), end='')
-        time.sleep(FRESH_TIME)
-
 def load():
     # 读取数据
-    data_csv = pd.read_csv('./mei_di_08_20.csv', usecols=[3])
+    data_csv = pd.read_csv('./mei_di_08_19.csv', usecols=[3])
     # 去除读入的数据中含有NaN的行。
     data_csv = data_csv.dropna()
     dataset = data_csv.values
@@ -226,6 +211,10 @@ def test():
               "  可参与负荷：" + str(PARTICIPATE_POWER_LIST[i]) +
               "  不可参与负荷：" + str(NO_PARTICIPATE_POWER_LIST[i]))
 
+    output = ",".join([str(item) for item in TOTAL_POWER_LIST])
+    print(output)
+    output1 = ",".join([str(item) for item in dataset])
+    print(output1)
     print("优化前负荷总量：" + str(customer_total_power))
     print("优化前用户总成本：" + str(customer_total_cost))
     print("优化前总利润：" + str(total_profit))

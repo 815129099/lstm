@@ -13,7 +13,7 @@ def create_lstm_model(input_shape):
     model.compile(optimizer='adam', loss='mean_squared_error')
     return model
 
-def run():
+def power_predict():
     # 加载和预处理数据
     df1 = pd.read_csv('./data_nong_1.csv')
     min_max_scaler = MinMaxScaler()
@@ -42,7 +42,7 @@ def run():
     print(model.summary())
 
     # 训练模型
-    model.fit(x_train, y_train, epochs=14, batch_size=32)
+    model.fit(x_train, y_train, epochs=100, batch_size=32)
 
     # 进行预测
     y_predict = model.predict(x_test)
@@ -77,4 +77,4 @@ def run():
 
 # 运行脚本
 if __name__ == '__main__':
-    run()
+    power_predict()

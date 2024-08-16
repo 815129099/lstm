@@ -1,10 +1,3 @@
-"""
-A simple example for Reinforcement Learning using table lookup Q-learning method.
-An agent "o" is on the left of a 1 dimensional world, the treasure is on the rightmost location.
-Run this program and to see how the agent will improve its strategy of finding the treasure.
-
-View more on my tutorial page: https://morvanzhou.github.io/tutorials/
-"""
 
 import numpy as np
 import pandas as pd
@@ -73,10 +66,6 @@ def choose_action(S, q_table, dataset):
 
     return action_name
 
-
-
-
-
 # S指时刻，A->S时刻时电价，dataset->负荷集合
 #获取当前status的奖励和下一个state
 def get_env_feedback(S, A, dataset, type):
@@ -135,7 +124,7 @@ def load():
     dataset = dataset.astype('float32')
     return dataset
 
-def test():
+def power_price():
     # 初始化Q值表
     q_table = build_q_table(N_STATES, ACTIONS)
     #预测的用电量
@@ -268,5 +257,5 @@ def show():
 
 
 if __name__ == "__main__":
-    q_table = test()
+    q_table = power_price()
 

@@ -10,7 +10,7 @@ def create_lstm_model(input_shape):
     model = Sequential()
     model.add(LSTM(50, input_shape=(input_shape[1], input_shape[2])))
     model.add(Dense(1))
-    model.compile(optimizer='adam', loss='mean_squared_error')
+    model.compile(optimizer='adam', loss='mean_absolute_percentage_error')
     return model
 
 def run():
@@ -42,7 +42,7 @@ def run():
     print(model.summary())
 
     # 训练模型
-    model.fit(x_train, y_train, epochs=140, batch_size=32)
+    model.fit(x_train, y_train, epochs=20, batch_size=32)
 
     # 进行预测
     y_predict = model.predict(x_test)
@@ -73,7 +73,7 @@ def run():
     real_data_csv = pd.DataFrame(data=y_test, columns=['real'])
     pred_data_csv = pd.DataFrame(data=y_predict, columns=['lstm'])
     dataframe = real_data_csv.join(pred_data_csv)
-    dataframe.to_csv('./mei_di_lstm_v1.csv', index=False, mode='w', sep=',')
+    dataframe.to_csv('./mei_di_lstm_v2.csv', index=False, mode='w', sep=',')
 
 # 运行脚本
 if __name__ == '__main__':
