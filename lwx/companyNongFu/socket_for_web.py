@@ -67,10 +67,11 @@ class ServerThreading(threading.Thread):
             json_object = json.loads(msg)
             type = json_object["type"]
             filePath = json_object["filePath"]
+            saveFilePath = json_object["saveFilePath"]
             print("请求类型："+str(type))
             if int(type) == 1:
                 # 预测电量
-                power_predict(filePath, filePath)
+                power_predict(filePath, saveFilePath)
 
             if int(type) == 2:
                 # 电力定价

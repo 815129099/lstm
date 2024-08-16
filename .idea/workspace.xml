@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2680c166-e01b-46aa-8499-c380d52fb12c" name="Default Changelist" comment="">
+    <list default="true" id="2680c166-e01b-46aa-8499-c380d52fb12c" name="Default Changelist" comment="socket">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/LSTM.py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/LSTM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/data_nong.csv" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/data_nong.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/data_nong_1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/data_nong_1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/new_data_nong_lstm_v1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/new_data_nong_lstm_v1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/q_learning_01_13.py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/q_learning_show.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/q_learning_12_30(T).py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/q_learning_12_30(T).py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/q_learning_12_31.py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/q_learning_12_31.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwx/meiDi/compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/meiDi/compare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwx/meiDi/lstm_v1.py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/meiDi/lstm_v1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwx/meiDi/q_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/meiDi/q_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/RNA_LSTM_FOR_WEB.py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/RNA_LSTM_FOR_WEB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwx/companyNongFu/socket.py" beforeDir="false" afterPath="$PROJECT_DIR$/lwx/companyNongFu/socket_for_web.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwx/data/power_1723779147865.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwx/data/power_predict_2024-08-15.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +21,7 @@
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$feature2.coverage" NAME="feature2 Coverage Results" MODIFIED="1673850652051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$svm.coverage" NAME="svm Coverage Results" MODIFIED="1710308029338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/meiDi" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$test.coverage" NAME="test Coverage Results" MODIFIED="1671367597475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
+    <SUITE FILE_PATH="coverage/LTSF_Linear_main$socket_for_web.coverage" NAME="socket_for_web Coverage Results" MODIFIED="1723796300911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$companyNongFu1230.coverage" NAME="companyNongFu1230 Coverage Results" MODIFIED="1710300651664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$month5.coverage" NAME="month5 Coverage Results" MODIFIED="1673851273294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$q_learning.coverage" NAME="q_learning Coverage Results" MODIFIED="1710662041944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/meiDi" />
@@ -44,8 +39,9 @@
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$q_learning_12_30.coverage" NAME="q_learning_12_30 Coverage Results" MODIFIED="1709801121655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$compare_v1.coverage" NAME="compare_v1 Coverage Results" MODIFIED="1709953928539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$q_learning_show.coverage" NAME="q_learning_show Coverage Results" MODIFIED="1710662705399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/meiDi" />
+    <SUITE FILE_PATH="coverage/LTSF_Linear_main$RNA_LSTM_FOR_WEB.coverage" NAME="RNA_LSTM_FOR_WEB Coverage Results" MODIFIED="1723796210115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$GRU__1_.coverage" NAME="GRU (1) Coverage Results" MODIFIED="1711855723035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/meiDi" />
-    <SUITE FILE_PATH="coverage/LTSF_Linear_main$socket.coverage" NAME="socket Coverage Results" MODIFIED="1723712983172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
+    <SUITE FILE_PATH="coverage/LTSF_Linear_main$socket.coverage" NAME="socket Coverage Results" MODIFIED="1723794077066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$compare_gru.coverage" NAME="compare_gru Coverage Results" MODIFIED="1711869141674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/companyNongFu" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$feature3.coverage" NAME="feature3 Coverage Results" MODIFIED="1671355733602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx" />
     <SUITE FILE_PATH="coverage/LTSF_Linear_main$compare.coverage" NAME="compare Coverage Results" MODIFIED="1711857277722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lwx/meiDi" />
@@ -79,29 +75,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/RNA_LSTM_FOR_WEB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="113">
+              <caret line="77" column="33" lean-forward="true" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/socket.py">
+        <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/socket_for_web.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/q_learning_for_web.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="130" column="29" selection-start-line="130" selection-start-column="29" selection-end-line="130" selection-end-column="29" />
+            <state relative-caret-position="81">
+              <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,7 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>1.059</find>
       <find>ALPHA</find>
       <find>WEIGHT_FACTOR</find>
       <find>customer_total_cost</find>
@@ -147,6 +136,7 @@
       <find>test</find>
       <find>create_lstm_model</find>
       <find>gethostname</find>
+      <find>real_data_csv</find>
     </findStrings>
     <replaceStrings>
       <replace>0.582</replace>
@@ -236,9 +226,9 @@
         <option value="$PROJECT_DIR$/lwx/companyNongFu/compare_gru.py" />
         <option value="$PROJECT_DIR$/lwx/companyNongFu/q_learning_12_31.py" />
         <option value="$PROJECT_DIR$/lwx/companyNongFu/LSTM.py" />
-        <option value="$PROJECT_DIR$/lwx/companyNongFu/RNA_LSTM_FOR_WEB.py" />
-        <option value="$PROJECT_DIR$/lwx/companyNongFu/socket.py" />
         <option value="$PROJECT_DIR$/lwx/companyNongFu/q_learning_for_web.py" />
+        <option value="$PROJECT_DIR$/lwx/companyNongFu/socket.py" />
+        <option value="$PROJECT_DIR$/lwx/companyNongFu/RNA_LSTM_FOR_WEB.py" />
       </list>
     </option>
   </component>
@@ -266,12 +256,6 @@
               <item name="LTSF-Linear-main" type="b2602c69:ProjectViewProjectNode" />
               <item name="LTSF-Linear-main" type="462c0819:PsiDirectoryNode" />
               <item name="lwx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LTSF-Linear-main" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LTSF-Linear-main" type="462c0819:PsiDirectoryNode" />
-              <item name="lwx" type="462c0819:PsiDirectoryNode" />
-              <item name="companyNongFu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LTSF-Linear-main" type="b2602c69:ProjectViewProjectNode" />
@@ -347,29 +331,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.socket">
-    <configuration name="GRU (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="LTSF-Linear-main" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lwx/meiDi" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lwx/meiDi/GRU.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.socket_for_web">
     <configuration name="GRU" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="LTSF-Linear-main" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -392,7 +354,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="compare" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="RNA_LSTM_FOR_WEB" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="LTSF-Linear-main" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -400,12 +362,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lwx/meiDi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lwx/companyNongFu" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lwx/meiDi/compare.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lwx/companyNongFu/RNA_LSTM_FOR_WEB.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -449,7 +411,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lwx/companyNongFu/socket.py" />
+      <option name="SCRIPT_NAME" value="D:\lunwengit\LTSF-Linear-main\lwx\companyNongFu\socket_for_web.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="socket_for_web" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="LTSF-Linear-main" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lwx/companyNongFu" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lwx/companyNongFu/socket_for_web.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -460,11 +444,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.socket_for_web" />
+        <item itemvalue="Python.RNA_LSTM_FOR_WEB" />
         <item itemvalue="Python.socket" />
         <item itemvalue="Python.compare_gru" />
         <item itemvalue="Python.GRU" />
-        <item itemvalue="Python.compare" />
-        <item itemvalue="Python.GRU (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -521,7 +505,7 @@
       <workItem from="1723360766295" duration="1185000" />
       <workItem from="1723687161305" duration="874000" />
       <workItem from="1723709302177" duration="5602000" />
-      <workItem from="1723773759188" duration="964000" />
+      <workItem from="1723773759188" duration="11684000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1685772724431</created>
@@ -628,23 +612,36 @@
       <option name="project" value="LOCAL" />
       <updated>1710496316052</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="socket">
+      <created>1723774756120</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1723774756121</updated>
+    </task>
+    <task id="LOCAL-00017" summary="socket">
+      <created>1723779529234</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1723779529234</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368718000" />
+    <option name="totallyTimeSpent" value="379438000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23525469" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26675603" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.008498584" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.038243625" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27903682" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.71954674" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -658,7 +655,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.30294907" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.5549598" />
       <window_info anchor="right" id="Database" order="4" weight="0.3297587" />
     </layout>
   </component>
@@ -717,7 +714,8 @@
     <MESSAGE value="引入svm" />
     <MESSAGE value="03.07提交" />
     <MESSAGE value="数据集2提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="数据集2提交" />
+    <MESSAGE value="socket" />
+    <option name="LAST_COMMIT_MESSAGE" value="socket" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -963,6 +961,21 @@
           <line>115</line>
           <option name="timeStamp" value="163" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lwx/companyNongFu/RNA_LSTM_FOR_WEB.py</url>
+          <line>90</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lwx/companyNongFu/RNA_LSTM_FOR_WEB.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lwx/companyNongFu/RNA_LSTM_FOR_WEB.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -998,67 +1011,53 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>y_predict = min_max_scaler.inverse_transform(y_predict)</expression-string>
+        <expression-string>y_predict.size</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>y_predict = min_max_scaler.inverse_transform(np.hstack([np.zeros((len(y_predict), 5)), y_predict.reshape(-1, 1)]))</expression-string>
+        <expression-string>y_predict</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>y_predict = min_max_scaler.inverse_transform(np.hstack([np.zeros((len(y_predict), 1)), y_predict.reshape(-1, 1)]))</expression-string>
+        <expression-string>df1['month'].size</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>0.5 * profit -(1-0.5) * total_cost</expression-string>
+        <expression-string>df1['month']</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>ALPHA*(predict_participate_power - actual_participate_power)*(predict_participate_power - actual_participate_power)</expression-string>
+        <expression-string>df1['month'].apply(len)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>predict_participate_power - actual_participate_power</expression-string>
+        <expression-string>df1[0].apply(len)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>predict_participate_power*(1+ELASTIC_COEFFICIENT[flag]*((A-wholesale_price)/wholesale_price))</expression-string>
+        <expression-string>df['month'].apply(len)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>-sys.maxsize-1</expression-string>
+        <expression-string>df[0].apply(len)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>PREDICT_ACTIONS[TIME_DICT[S]]</expression-string>
+        <expression-string>range(df1)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/svm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="829">
-          <caret line="55" column="57" lean-forward="true" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/sklearn/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="823" column="8" selection-start-line="823" selection-start-column="8" selection-end-line="823" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Anaconda3/envs/ltsf/Lib/site-packages/pandas/core/indexes/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -1155,16 +1154,6 @@
           <caret line="216" column="26" lean-forward="true" selection-start-line="216" selection-start-column="26" selection-end-line="216" selection-end-column="26" />
           <folding>
             <element signature="e#4#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/q_learning_01_16.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="63" column="26" lean-forward="true" selection-end-line="300" />
-          <folding>
-            <element signature="e#2937#4376#0" />
           </folding>
         </state>
       </provider>
@@ -1407,27 +1396,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/LSTM.py">
+    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/q_learning_01_16.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="264">
+          <caret line="17" column="86" selection-start-line="17" selection-start-column="86" selection-end-line="17" selection-end-column="86" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#2937#4376#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/RNA_LSTM_FOR_WEB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/socket.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1435,6 +1410,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="130" column="29" selection-start-line="130" selection-start-column="29" selection-end-line="130" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/LSTM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-968">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3/envs/ltsf/Lib/site-packages/pandas/io/parsers/readers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="501" column="13" lean-forward="true" selection-start-line="501" selection-start-column="13" selection-end-line="501" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3/envs/ltsf/Lib/site-packages/pandas/core/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="531" selection-start-line="531" selection-end-line="531" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/socket_for_web.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lwx/companyNongFu/RNA_LSTM_FOR_WEB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="77" column="33" lean-forward="true" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
         </state>
       </provider>
     </entry>

@@ -70,11 +70,22 @@ def power_predict(filePath, saveFilePath):
     print("MAPE: {}, RMSE: {}".format(mase, rmse))
 
     # 将结果保存到新的CSV文件
-    real_data_csv = pd.DataFrame(data=y_test, columns=['real'])
-    pred_data_csv = pd.DataFrame(data=y_predict, columns=['lstm'])
-    dataframe = real_data_csv.join(pred_data_csv)
-    dataframe.to_csv(saveFilePath, index=False, mode='w', sep=',')
+    # real_data_csv = pd.DataFrame(data=y_test, columns=['real'])
+    # pred_data_csv = pd.DataFrame(data=y_predict, columns=['lstm'])
+    # dataframe = real_data_csv.join(pred_data_csv)
+    # dataframe.to_csv(saveFilePath, index=False, mode='w', sep=',')
+    #总长度
+    total_len = df1['month'].size
+    # 预测值的长度
+    y_predict_size = y_predict.size
+    # 补零
+    zeros = np.zeros(total_len - y_predict_size)
+    # 拼成一个完整数组
+    new_array = np.append(zeros, y_predict)
+    #追加到csv文件
+    df1['lstm'] = new_array
+    df1.to_csv(saveFilePath, index=False, mode='w', sep=',')
 
 # 运行脚本
 if __name__ == '__main__':
-    power_predict('./data_nong_1.csv', './new_data_nong_lstm_v1.csv')
+    power_predict('D:\\lunwengit\\LTSF-Linear-main\\lwx\\data\\power_1723793080468.csv', 'D:\\lunwengit\\LTSF-Linear-main\\lwx\\data\\power_predict_1723793080468.csv')
